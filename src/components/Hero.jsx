@@ -1,9 +1,58 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import gsap from 'gsap';
 import CardSwap, { Card } from './CardSwap';
 import ResumeDownload from './ResumeDownload';
 import './Hero.css';
 
 const Hero = () => {
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const words = ['Efficient', 'Scalable', 'Innovative', 'Robust', 'Modern'];
+  const animatedWordRef = useRef(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }, 3000); 
+
+    return () => clearInterval(interval);
+  }, [words.length]);
+
+  useEffect(() => {
+    if (animatedWordRef.current) {
+      const word = animatedWordRef.current;
+      const letters = word.textContent.split('');
+      
+      // Clear the word and create spans for each letter
+      word.innerHTML = '';
+      letters.forEach((letter, index) => {
+        const span = document.createElement('span');
+        span.textContent = letter === ' ' ? '\u00A0' : letter; // Non-breaking space
+        span.style.display = 'inline-block';
+        span.style.opacity = '0';
+        span.style.transform = 'translateY(50px) rotateX(90deg)';
+        word.appendChild(span);
+      });
+
+      // Animate letters in
+      gsap.fromTo(
+        word.children,
+        {
+          opacity: 0,
+          y: 50,
+          rotationX: 90,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          rotationX: 0,
+          duration: 1,
+          stagger: 0.10,
+          ease: 'back.out(2.5)',
+        }
+      );
+    }
+  }, [currentWordIndex]);
+
   const projects = [
     {
       title: "Infinity Nail Spa",
@@ -36,9 +85,9 @@ const Hero = () => {
     <section id="home" className="hero-section">
       <div className="container hero-container">
         <div className="hero-content">
-          <div className="role-tag">Frontend & Solutions Architect Engineer</div>
+          <div className="role-tag">Software & Solutions Architect Engineer</div>
           <h1 className="hero-title">
-            Delivering Systems<span className="dot">.</span>
+            Delivering <span ref={animatedWordRef} className="animated-word">{words[currentWordIndex]}</span> Systems<span className="dot">.</span>
           </h1>
           <p className="hero-description">
             I craft minimalist, high-performance web experiences with a focus on 
@@ -46,7 +95,13 @@ const Hero = () => {
           </p>
           <div className="hero-btns">
             <ResumeDownload />
-            <a href="/about" className="btn-secondary">About Me</a>
+            <a href="#contact" className="btn-secondary" onClick={(e) => {
+              e.preventDefault();
+              const element = document.getElementById('contact');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}>Let's Talk</a>
           </div>
         </div>
         <div className="hero-visual">

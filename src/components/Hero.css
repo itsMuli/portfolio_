@@ -162,3 +162,30 @@
         min-height: 400px;
     }
 }
+/* Animated word styling */
+.animated-word {
+  color: var(--text-muted);
+  display: inline-block;
+  min-width: 200px;
+  text-align: left;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.animated-word span {
+  display: inline-block;
+  transform-origin: center bottom;
+  will-change: transform, opacity;
+}
+
+/* Ensure smooth transitions */
+.hero-title {
+  overflow: visible;
+  perspective: 1000px;
+}
+
+@media (max-width: 768px) {
+  .animated-word {
+    min-width: 150px;
+  }
+}
