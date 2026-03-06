@@ -87,6 +87,7 @@ const About = () => {
                   <h3>Databases</h3>
                   <div className="skill-tags">
                     <span className="skill-tag">MongoDB</span>
+                    <span className="skill-tag">CRM</span>
                   </div>
                 </div>
                 <div className="skill-category">
