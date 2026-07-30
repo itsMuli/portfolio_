@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     padding-top: 100px;
+    padding-bottom: 40px;
 }
 
 .hero-container {
@@ -188,4 +189,13 @@
   .animated-word {
     min-width: 150px;
   }
+
+    .hero-section {
+        padding-top: 72px;
+        min-height: auto;
+    }
+
+    .hero-visual {
+        display: none;
+    }
 }

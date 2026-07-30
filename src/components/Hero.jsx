@@ -24,7 +24,7 @@ const Hero = () => {
       
       // Clear the word and create spans for each letter
       word.innerHTML = '';
-      letters.forEach((letter, index) => {
+      letters.forEach((letter) => {
         const span = document.createElement('span');
         span.textContent = letter === ' ' ? '\u00A0' : letter; // Non-breaking space
         span.style.display = 'inline-block';

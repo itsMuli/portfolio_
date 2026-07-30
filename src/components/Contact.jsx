@@ -74,28 +74,24 @@ Sent from Rose Mwendwa Portfolio Contact Form`;
             
             <div className="contact-methods">
               <div className="method">
-                <span className="icon">📧</span>
                 <div>
                   <h4>Email</h4>
                   <a href="mailto:rosemwendwa163@gmail.com">rosemwendwa163@gmail.com</a>
                 </div>
               </div>
               <div className="method">
-                <span className="icon">📞</span>
                 <div>
                   <h4>Call</h4>
                   <a href="tel:+254110939077">(+254) 110939077</a>
                 </div>
               </div>
               <div className="method">
-                <span className="icon">💬</span>
                 <div>
                   <h4>WhatsApp</h4>
                   <a href="https://wa.me/254110839077" target="_blank" rel="noopener noreferrer">(+254) 110839077</a>
                 </div>
               </div>
               <div className="method">
-                <span className="icon">📍</span>
                 <div>
                   <h4>Location</h4>
                   <p>Nairobi, Kenya</p>
@@ -139,7 +135,6 @@ Sent from Rose Mwendwa Portfolio Contact Form`;
               ></textarea>
             </div>
             <button type="submit" className="btn-primary email-btn" style={{width: '100%'}}>
-              <span className="btn-icon">📧</span>
               Send Message
             </button>
           </form>

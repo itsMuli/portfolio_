@@ -74,4 +74,17 @@
     .nav-cta {
         display: none;
     }
+
+    .nav-actions .theme-toggle {
+        display: none;
+    }
+
+    .nav-actions .nav-cta {
+        display: inline-flex;
+    }
+
+    .nav-cta {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
 }

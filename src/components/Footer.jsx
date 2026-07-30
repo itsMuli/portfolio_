@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer style={{padding: '40px 0', borderTop: '1px solid var(--glass-border)', textAlign: 'center'}}>
+    <footer style={{padding: '24px 0', borderTop: '1px solid var(--glass-border)', textAlign: 'center'}}>
       <div className="container">
         <div className="logo" style={{marginBottom: '20px'}}>
           <span>ROSE</span>.DEV
