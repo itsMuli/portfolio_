@@ -6,11 +6,11 @@ const ResumeDownload = ({ className = "btn-primary", children = "Download Resume
     
     // Check if resume file exists, otherwise show a message
     const link = document.createElement('a');
-    link.href = '/resume.pdf'; // Make sure to add your resume.pdf to the public folder
-    link.download = 'Rose_Mwendwa_Resume.pdf';
+    link.href = '/Rose_Mwendwa_Resume.docx';
+    link.download = 'Rose_Mwendwa_Resume.docx';
     
     // Check if file exists before downloading
-    fetch('/resume.pdf')
+    fetch('/Rose_Mwendwa_Resume.docx')
       .then(response => {
         if (response.ok) {
           link.click();
@@ -19,7 +19,7 @@ const ResumeDownload = ({ className = "btn-primary", children = "Download Resume
         }
       })
       .catch(() => {
-        alert('Resume file not found. Please add your resume.pdf to the public folder.');
+        alert('Resume file not found. Please add your resume.docx to the public folder.');
       });
   };
 
